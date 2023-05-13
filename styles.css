@@ -30,22 +30,23 @@
   /* Z-INDEX */
   --z-tooltip: 10;
   --z-fixed: 100;
+}
 
-  /* Responsiveness */
-  @media screen and (min-width: 1152px) {
-    :root {
-      --biggest-font-size: 4rem;
-      --bigger-font-size: 2rem;
-      --h1-font-size: 2.25rem;
-      --h2-font-size: 1.5rem;
-      --h3-font-size: 1.25rem;
-      --normal-font-size: 1rem;
-      --small-font-size: 0.875rem;
-      --smaller-font-size: 0.813rem;
-    }
+/* Responsiveness */
+@media screen and (min-width: 1152px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --bigger-font-size: 2rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
+/* BASE */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -98,6 +99,7 @@ svg {
   height: auto;
 }
 
+/* REUSABLE CSS CLASSES */
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
@@ -136,3 +138,39 @@ svg {
 .main {
   overflow: hidden; /* for animations scroll reveal */
 }
+
+/* HEADER & NAV */
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--container-color);
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.nav__logo span {
+  color: var(--first-color);
+}
+
+.nav__toggle,
+.nav__close {
+  display: flex;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+/*Navigation for mobile devices*/
