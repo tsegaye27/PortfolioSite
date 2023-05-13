@@ -179,13 +179,35 @@ svg {
   .nav__menu {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     background-color: hsla(0, 0%, 10%, 0.3);
     width: 75%;
     height: 100%;
     padding: 4.5rem 0 0 3rem;
     backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px); /*For Safari*/
+    -webkit-backdrop-filter: blur(24px);
     transition: right 0.4s;
   }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: color 0.4s;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
 }
