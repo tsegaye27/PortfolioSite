@@ -211,3 +211,8 @@ svg {
   top: 1rem;
   right: 1.5rem;
 }
+
+/*Show menu*/
+.show-menu {
+  right: 0;
+}
