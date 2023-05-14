@@ -4,7 +4,6 @@ const navMenu = document.getElementById("nav-menu"),
   navClose = document.getElementById("nav-close");
 
 //MENU SHOW
-//Validate if constant exists
 if (navToggle) {
   navToggle.addEventListener("click", () => {
     navMenu.classList.add("show-menu");
@@ -12,7 +11,6 @@ if (navToggle) {
 }
 
 //MENU HIDDEN
-//Validate if constant exists
 if (navClose) {
   navClose.addEventListener("click", () => {
     navMenu.classList.remove("show-menu");
@@ -39,3 +37,50 @@ const blurHeader = () => {
 };
 
 window.addEventListener("scroll", blurHeader);
+
+// EMAIL JS
+const contactForm = document.getElementById("contact-form"),
+  contactMessage = document.getElementById("contact-message");
+
+const sendEmail = (e) => {
+  e.preventDefault();
+  //ServiceID - templateID - #form - publicKey
+  emailjs
+    .sendForm(
+      "service_bafsyqh",
+      "template_ucm7bmn",
+      "#contact-form",
+      "RXPCXXRttJyPa65Ak"
+    )
+    .then(
+      () => {
+        //Show sent message
+        contactMessage.textContent = "Message sent successfully ✅";
+
+        //Remove message after five seconds
+        setTimeout(() => {
+          contactMessage.textContent = "";
+        }, 5000);
+
+        //Clear input fields
+        contactForm.reset();
+      },
+      () => {
+        //Show error message
+        contactMessage.textContent = "Message not sent (server error) ❌";
+      }
+    );
+};
+
+contactForm.addEventListener("submit", sendEmail);
+
+//SHOW SCROLL UP
+const scrollUp = () => {
+  const scrollUp = document.getElementById("scroll-up");
+
+  this.scrollY >= 350
+    ? scrollUp.classList.add("show-scroll")
+    : scrollUp.classList.remove("show-scroll");
+};
+
+window.addEventListener("scroll", scrollUp);
