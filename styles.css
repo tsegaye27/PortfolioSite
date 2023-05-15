@@ -5,9 +5,9 @@
 :root {
   --header-height: 3.5rem;
 
-  /* COLORS */
-  --hue: 187;
-  --first-color: hsl(var(--hue), 71%, 58%);
+  /* COLORS 187,71%,58%*/
+  --hue: 14;
+  --first-color: hsl(var(--hue), 100%, 65%);
   --first-color-alt: hsl(var(--hue), 56%, 35%);
   --title-color: hsl(228, 8%, 95%);
   --text-color: hsl(228, 8%, 65%);
@@ -333,6 +333,7 @@ svg {
 
 .about__description {
   margin-bottom: 2rem;
+  font-size: var(--small-font-size);
 }
 
 .about__image {
